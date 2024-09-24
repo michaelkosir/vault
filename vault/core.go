@@ -362,6 +362,12 @@ type Core struct {
 	generateRootProgress [][]byte
 	generateRootLock     sync.Mutex
 
+	// verifyQuorumProgress holds the shares until we reach enough
+	// to verify the root key
+	verifyQuorumConfig   *VerifyQuorumConfig
+	verifyQuorumProgress [][]byte
+	verifyQuorumLock     sync.Mutex
+
 	// These variables holds the config and shares we have until we reach
 	// enough to verify the appropriate master key. Note that the same lock is
 	// used; this isn't time-critical so this shouldn't be a problem.

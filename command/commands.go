@@ -376,6 +376,11 @@ func initCommands(ui, serverCmdUi cli.Ui, runOpts *RunOptions) map[string]cli.Co
 				BaseCommand: getBaseCommand(),
 			}, nil
 		},
+		"operator verify": func() (cli.Command, error) {
+			return &OperatorVerifyQuorumCommand{
+				BaseCommand: getBaseCommand(),
+			}, nil
+		},
 		"operator init": func() (cli.Command, error) {
 			return &OperatorInitCommand{
 				BaseCommand: getBaseCommand(),
