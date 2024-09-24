@@ -176,7 +176,6 @@ func (c *OperatorVerifyQuorumCommand) Run(args []string) int {
 
 // init is used to start the verification process
 func (c *OperatorVerifyQuorumCommand) init(client *api.Client) int {
-
 	// Start the verification
 	f := client.Sys().VerifyQuorumInit
 
